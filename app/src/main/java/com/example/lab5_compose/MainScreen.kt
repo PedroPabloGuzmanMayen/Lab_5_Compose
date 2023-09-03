@@ -16,6 +16,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -50,7 +51,7 @@ fun bodyContent() {
                 ) {
                     // Replace with your image resource
                     Image(
-                        painter = painterResource(id = R.drawable.your_image_resource),
+                        painter = rememberImagePainter(data = "https://articles-img.sftcdn.net/f_auto,t_article_cover_l/auto-mapping-folder/sites/2/2023/04/swift-5-eras-tour.jpg"),
                         contentDescription = null,
                         modifier = Modifier.size(64.dp)
                     )
