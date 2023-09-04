@@ -17,46 +17,50 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberImagePainter
-
+//Función que será invocada para mostrar la pantalla
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun mainScreen() {
+fun mainScreen(information: MutableList<concertDetails>) {
     Scaffold(
-        topBar = {
+        topBar = { //Crear una barra para mostrar el nombre de la app y ,ostrar un botón para llevar al perfil del usuario
             TopAppBar(title = {
-                Text("Todo Eventos")
+                Text("Todo Eventos") //Mostrar el nombre de la app
             })
         },
         content = {
-            bodyContent()
+            bodyContent(information) //Función que despliega el cuerpo de la pantalla
         }
     )
 }
 
 @Composable
-fun bodyContent() {
+fun bodyContent(information: MutableList<concertDetails>) {
+    //Almacenar varias tarjetas que muestren información del concierto en una cuadrícula
     LazyVerticalGrid(columns = GridCells.Fixed(2), content = {
-        items(100) { i ->
+        items(information.size) { i ->
+            val concertName = information[i]
+            val
             Card(
                 modifier = Modifier
                     .padding(8.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(5.dp))
             ) {
-                Column(
+                Column( //La tarjeta tendrá una columna con una imagen y un
                     modifier = Modifier.fillMaxSize(),
                     verticalArrangement = Arrangement.Center,
                     horizontalAlignment = Alignment.CenterHorizontally
                 ) {
-                    // Replace with your image resource
+                    //Mostrar la imagen, usar coil para solamente utilizar el URL de la imagen que se quiere mostrar
                     Image(
-                        painter = rememberImagePainter(data = "https://articles-img.sftcdn.net/f_auto,t_article_cover_l/auto-mapping-folder/sites/2/2023/04/swift-5-eras-tour.jpg"),
+                        painter = rememberImagePainter(data = information[i].url),
                         contentDescription = null,
                         modifier = Modifier.size(64.dp)
                     )
+                    //Indicar el nombre del evento
                     Text(
-                        text = "Hello",
+                        text = information[i].name,
                         fontWeight = FontWeight.Bold
                     )
                 }
@@ -65,8 +69,3 @@ fun bodyContent() {
     })
 }
 
-@Preview
-@Composable
-fun mainScreenPreview() {
-    mainScreen()
-}
