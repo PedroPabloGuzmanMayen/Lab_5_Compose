@@ -58,7 +58,7 @@ fun bodyContent(information: MutableList<concertDetails>) {
                     Image(
                         painter = rememberImagePainter(data = information[i].url),
                         contentDescription = null,
-                        modifier = Modifier.size(64.dp)
+                        modifier = Modifier.size(64.dp).fillMaxWidth()
                     )
                     //Indicar el nombre del evento
                     Text(
