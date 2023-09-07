@@ -25,7 +25,8 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     //mainScreen(events)
-                    locations(events)
+                    //locations(events)
+                    details(events[0])
                 }
             }
         }
