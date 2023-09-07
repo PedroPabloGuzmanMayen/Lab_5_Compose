@@ -23,15 +23,19 @@ import coil.compose.rememberImagePainter
 @Composable
 fun mainScreen(information: MutableList<concertDetails>) {
     Scaffold(
-        topBar = { //Crear una barra para mostrar el nombre de la app y ,ostrar un botón para llevar al perfil del usuario
+        topBar = { //Appbar
             TopAppBar(title = {
-                Text("Todo Eventos") //Mostrar el nombre de la app
+                Text("Todo Eventos") //Appname
             })
-        },
-        content = {
-            bodyContent(information) //Función que despliega el cuerpo de la pantalla
         }
-    )
+    ) { innerPadding ->
+        Column(modifier = Modifier.padding(innerPadding)){
+            Text("Para ti")
+            bodyContent(information) //This function shows the content of the screen
+            Text("Todos los eventos")
+            bodyContent(information)
+        }
+    }
 }
 
 @Composable
@@ -39,8 +43,6 @@ fun bodyContent(information: MutableList<concertDetails>) {
     //Almacenar varias tarjetas que muestren información del concierto en una cuadrícula
     LazyVerticalGrid(columns = GridCells.Fixed(2), content = {
         items(information.size) { i ->
-            val concertName = information[i]
-            val
             Card(
                 modifier = Modifier
                     .padding(8.dp)
