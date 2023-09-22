@@ -9,11 +9,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
 
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun details(information: concertDetails){
+fun details(information: concertDetails, navController: NavController){
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = { //Appbar
@@ -40,13 +41,13 @@ fun details(information: concertDetails){
             .fillMaxSize()
             .fillMaxWidth()
             .fillMaxHeight()){
-            content(information)
+            content(information, navController)
         }
     }
 }
 
 @Composable
-fun content(information: concertDetails){
+fun content(information: concertDetails, navController: NavController){
     Card(modifier = Modifier
         .fillMaxSize(),
         colors = CardDefaults.cardColors(
