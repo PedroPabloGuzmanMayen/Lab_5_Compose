@@ -24,7 +24,7 @@ fun details(information: concertDetails, navController: NavController){
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Yellow ),
                 navigationIcon = {
-                    IconButton(onClick = { /*TODO*/ }) {
+                    IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Localized description"
@@ -48,6 +48,7 @@ fun details(information: concertDetails, navController: NavController){
 
 @Composable
 fun content(information: concertDetails, navController: NavController){
+
     Card(modifier = Modifier
         .fillMaxSize(),
         colors = CardDefaults.cardColors(
@@ -61,7 +62,7 @@ fun content(information: concertDetails, navController: NavController){
 
         }
 
-        Text(information.details)
+
 
     }
 }
