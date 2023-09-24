@@ -52,7 +52,7 @@ fun bodyContent(information: MutableList<concertDetails>, navController: NavCont
                     .padding(8.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(5.dp))
-                    .clickable( onClick = {navController.navigate(route = "second screen" + i)})
+                    .clickable( onClick = {navController.navigate(route = AppScreens.SecondScreen.route)})
             ) {
                 Column( //La tarjeta tendrá una columna con una imagen y un
                     modifier = Modifier.fillMaxSize(),

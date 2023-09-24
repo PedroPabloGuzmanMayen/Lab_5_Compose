@@ -11,19 +11,15 @@ import com.example.lab5_compose.mainScreen
 import com.example.lab5_compose.details
 
 @Composable
-fun AppNavigation(information: MutableList<concertDetails>, index: Int = 0){
+fun AppNavigation(information: MutableList<concertDetails>){
     val navController = rememberNavController()
 
     NavHost(navController = navController, startDestination = AppScreens.FirsScreen.route ){
         composable(route = AppScreens.FirsScreen.route){
             mainScreen(information, navController)
         }
-        composable(route = AppScreens.SecondScreen.route,
-        arguments = listOf(navArgument(name = "index"){
-            type = NavType.IntType
-        })){
-            val details = information[index]
-            details(details, navController)
+        composable(route = AppScreens.SecondScreen.route){
+                details(information[0], navController)
+            }
         }
     }
-}
