@@ -7,6 +7,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.lab5_compose.LogIn
 import com.example.lab5_compose.TabsPrincipal
 import com.example.lab5_compose.concertDetails
 import com.example.lab5_compose.mainScreen
@@ -20,10 +21,10 @@ fun AppNavigation(){
 
     NavHost(navController = navController, startDestination = AppScreens.FirsScreen.route ){
         composable(route = AppScreens.FirsScreen.route){
-            TabsPrincipal()
+            LogIn(navController)
         }
         composable(route = AppScreens.SecondScreen.route){
-            mainScreen()
+            TabsPrincipal()
         }
         composable(route = AppScreens.ThirdScreen.route){
             details(hola)

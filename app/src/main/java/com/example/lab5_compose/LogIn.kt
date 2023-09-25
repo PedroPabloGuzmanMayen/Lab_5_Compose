@@ -25,10 +25,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import com.example.lab5_compose.Navigation.AppScreens
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LogIn(){
+fun LogIn(navController: NavController){
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = { //Appbar
@@ -46,14 +48,14 @@ fun LogIn(){
             .fillMaxSize()
             .fillMaxWidth()
             .fillMaxHeight()){
-            logIn_content()
+            logIn_content(navController)
         }
     }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun logIn_content(){
+fun logIn_content(navController: NavController){
 
     var obj by remember { mutableStateOf("") }
     var url by remember { mutableStateOf("") }
@@ -74,8 +76,7 @@ fun logIn_content(){
         TextField(value = obj, onValueChange = { obj = it }, label = { Text("Nombre de usuario ") })
         TextField(value = url, onValueChange = { url = it }, label = { Text("Contraseña ") })
         Button(onClick = {
-            obj = ""
-            url = ""
+            navController.navigate(route = AppScreens.SecondScreen.route)
         }) {
             Text("LogIn")
         }
