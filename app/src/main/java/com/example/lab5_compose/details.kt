@@ -14,7 +14,7 @@ import androidx.navigation.NavController
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
-fun details(information: concertDetails, navController: NavController){
+fun details(information: concertDetails){
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
     Scaffold(
         topBar = { //Appbar
@@ -24,7 +24,7 @@ fun details(information: concertDetails, navController: NavController){
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Yellow ),
                 navigationIcon = {
-                    IconButton(onClick = { navController.popBackStack() }) {
+                    IconButton(onClick = {}) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Localized description"
@@ -41,13 +41,13 @@ fun details(information: concertDetails, navController: NavController){
             .fillMaxSize()
             .fillMaxWidth()
             .fillMaxHeight()){
-            content(information, navController)
+            content(information)
         }
     }
 }
 
 @Composable
-fun content(information: concertDetails, navController: NavController){
+fun content(information: concertDetails){
 
     Card(modifier = Modifier
         .fillMaxSize(),

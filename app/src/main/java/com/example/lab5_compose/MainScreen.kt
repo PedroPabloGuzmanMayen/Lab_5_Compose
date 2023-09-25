@@ -21,11 +21,16 @@ import androidx.navigation.NavController
 import coil.compose.rememberImagePainter
 import com.example.lab5_compose.Navigation.AppScreens
 
+
+var taylorSwift: concertDetails = concertDetails("The eras tour", "Taylor Swift", "https://d2cx26qpfwuhvu.cloudfront.net/millstad/wp-content/uploads/2023/06/20124152/TS-CARDIFF-STADIUM-WEBSITE-EVENT-PAGE-1170px-wide-x-660px-high.jpg", "Por primera vez Taylor Swift en Guatemala", "Casa de Dios", "12/11/2023", "6:00 p.m")
+var theWeekend: concertDetails = concertDetails("After Hours until Dawn", "The Weekend", "https://www.theweeknd.com/files/2022/12/GLOBALSTADIUMTOUR_0-819x1024.jpeg", "The Weekend en Guatemalam por primera vez", "Explanada Cayala", "14/12/2023", "10.00 p.m")
+var events: MutableList<concertDetails> = mutableListOf(taylorSwift, theWeekend)
+
 //Función que será invocada para mostrar la pantalla
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun mainScreen(information: MutableList<concertDetails>, navController: NavController) {
+fun mainScreen() {
     Scaffold(
         topBar = { //Appbar
             TopAppBar(title = {
@@ -35,15 +40,15 @@ fun mainScreen(information: MutableList<concertDetails>, navController: NavContr
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)){
             Text("Para ti")
-            bodyContent(information, navController) //This function shows the content of the screen
+            bodyContent(events) //This function shows the content of the screen
             Text("Todos los eventos")
-            bodyContent(information, navController)
+            bodyContent(events)
         }
     }
 }
 
 @Composable
-fun bodyContent(information: MutableList<concertDetails>, navController: NavController) {
+fun bodyContent(information: MutableList<concertDetails>) {
     //Almacenar varias tarjetas que muestren información del concierto en una cuadrícula
     LazyVerticalGrid(columns = GridCells.Fixed(2), content = {
         items(information.size) { i ->
@@ -52,7 +57,7 @@ fun bodyContent(information: MutableList<concertDetails>, navController: NavCont
                     .padding(8.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(5.dp))
-                    .clickable( onClick = {navController.navigate(route = AppScreens.SecondScreen.route)})
+                    .clickable( onClick = {})
             ) {
                 Column( //La tarjeta tendrá una columna con una imagen y un
                     modifier = Modifier.fillMaxSize(),
