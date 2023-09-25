@@ -70,7 +70,7 @@ fun content(information: concertDetails) {
                 Text(
                     text = information.date,
                     textAlign = TextAlign.Left,
-                    fontSize = 16.sp, // Text size
+                    fontSize = 25.sp, // Text size
                     color = Color.White // Text color
                 )
             }
@@ -82,7 +82,7 @@ fun content(information: concertDetails) {
                 Text(
                     text = information.hour,
                     textAlign = TextAlign.Right,
-                    fontSize = 16.sp, // Text size
+                    fontSize = 25.sp, // Text size
                     color = Color.White // Text color
                 )
             }
@@ -93,10 +93,24 @@ fun content(information: concertDetails) {
         Text(information.name,
             style = TextStyle(
             fontSize = 40.sp,
-            fontWeight = FontWeight.Bold, // Set the font weight to bold
-            color = Color.Black // Set the text color
+            fontWeight = FontWeight.Bold,
+            color = Color.Black
             )
         )
+        Spacer(modifier = Modifier.size(25.dp))
+        Text("Acerca de",
+            style = TextStyle(
+                fontSize = 25.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.Black
+            ))
+        Spacer(modifier = Modifier.size(25.dp))
+        Text(information.details,
+            style = TextStyle(
+                fontSize = 17.sp,
+
+                color = Color.Black
+        ))
 
     }
 }
