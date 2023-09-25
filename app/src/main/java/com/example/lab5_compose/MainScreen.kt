@@ -1,6 +1,7 @@
 package com.example.lab5_compose
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
@@ -57,7 +58,8 @@ fun bodyContent(information: MutableList<concertDetails>, navController: NavCont
                     .padding(8.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(5.dp))
-                    .clickable(onClick = { navController.navigate(route = AppScreens.ThirdScreen.route)})
+                    .clickable(onClick = { val intent = Intent(navController.context, MainActivity2::class.java)
+                        navController.context.startActivity(intent)})
             ) {
                 Column( //La tarjeta tendrá una columna con una imagen y un
                     modifier = Modifier.fillMaxSize(),

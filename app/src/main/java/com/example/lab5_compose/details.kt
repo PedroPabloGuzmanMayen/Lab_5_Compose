@@ -1,6 +1,7 @@
 package com.example.lab5_compose
 
 
+import android.content.Intent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
@@ -14,14 +15,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
+import androidx.navigation.compose.rememberNavController
 
 
 @Composable
 @OptIn(ExperimentalMaterial3Api::class)
 fun details(information: concertDetails){
     val scrollBehavior = TopAppBarDefaults.pinnedScrollBehavior(rememberTopAppBarState())
+    val navController = rememberNavController()
     Scaffold(
+
         topBar = { //Appbar
             TopAppBar(
                 title = {
@@ -29,7 +32,8 @@ fun details(information: concertDetails){
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Yellow ),
                 navigationIcon = {
-                    IconButton(onClick = {}) {
+                    IconButton(onClick = {val intent = Intent(navController.context, MainActivity::class.java)
+                        navController.context.startActivity(intent)}) {
                         Icon(
                             imageVector = Icons.Filled.ArrowBack,
                             contentDescription = "Localized description"
