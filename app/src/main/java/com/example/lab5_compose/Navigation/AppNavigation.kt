@@ -23,7 +23,10 @@ fun AppNavigation(){
             TabsPrincipal()
         }
         composable(route = AppScreens.SecondScreen.route){
-                details(hola)
-            }
+            mainScreen()
+        }
+        composable(route = AppScreens.ThirdScreen.route){
+            details(hola)
         }
     }
+}

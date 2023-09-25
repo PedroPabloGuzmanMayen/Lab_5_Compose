@@ -14,6 +14,7 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -28,7 +29,7 @@ fun locations(){
         topBar = { //Appbar
             TopAppBar(title = {
                 Text("Lugares") //Appname
-            })
+            }, colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Yellow ))
         }
     ) { innerPadding ->
         //Use la lazy column to show all the cards

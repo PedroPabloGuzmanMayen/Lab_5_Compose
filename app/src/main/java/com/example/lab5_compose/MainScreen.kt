@@ -18,6 +18,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import coil.compose.rememberImagePainter
 import com.example.lab5_compose.Navigation.AppScreens
 
@@ -31,6 +32,7 @@ var events: MutableList<concertDetails> = mutableListOf(taylorSwift, theWeekend)
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun mainScreen() {
+    var navController = rememberNavController()
     Scaffold(
         topBar = { //Appbar
             TopAppBar(title = {
@@ -40,15 +42,15 @@ fun mainScreen() {
     ) { innerPadding ->
         Column(modifier = Modifier.padding(innerPadding)){
             Text("Para ti")
-            bodyContent(events) //This function shows the content of the screen
+            bodyContent(events, navController) //This function shows the content of the screen
             Text("Todos los eventos")
-            bodyContent(events)
+            bodyContent(events, navController)
         }
     }
 }
 
 @Composable
-fun bodyContent(information: MutableList<concertDetails>) {
+fun bodyContent(information: MutableList<concertDetails>, navController: NavController) {
     //Almacenar varias tarjetas que muestren información del concierto en una cuadrícula
     LazyVerticalGrid(columns = GridCells.Fixed(2), content = {
         items(information.size) { i ->
@@ -57,7 +59,7 @@ fun bodyContent(information: MutableList<concertDetails>) {
                     .padding(8.dp)
                     .aspectRatio(1f)
                     .clip(RoundedCornerShape(5.dp))
-                    .clickable( onClick = {})
+                    .clickable(onClick = { navController.navigate(route = AppScreens.ThirdScreen.route)})
             ) {
                 Column( //La tarjeta tendrá una columna con una imagen y un
                     modifier = Modifier.fillMaxSize(),
@@ -68,7 +70,9 @@ fun bodyContent(information: MutableList<concertDetails>) {
                     Image(
                         painter = rememberImagePainter(data = information[i].url),
                         contentDescription = null,
-                        modifier = Modifier.size(64.dp).fillMaxWidth()
+                        modifier = Modifier
+                            .size(64.dp)
+                            .fillMaxWidth()
                     )
                     //Indicar el nombre del evento
                     Text(

@@ -11,12 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.example.lab5_compose.ui.theme.Lab5_ComposeTheme
 import com.example.lab5_compose.Navigation.AppNavigation
 import com.google.accompanist.pager.ExperimentalPagerApi
+import androidx.navigation.compose.rememberNavController
 
 class MainActivity : ComponentActivity() {
-    private lateinit var navController: NavController
+
     @OptIn(ExperimentalPagerApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
