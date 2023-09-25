@@ -31,9 +31,10 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //mainScreen(events)
                     //locations(events)
-                    details(events[0])
+                    //details(events[0])
                     //AppNavigation(events)
                     //AppNavigation()
+                    LogIn()
                 }
             }
         }
