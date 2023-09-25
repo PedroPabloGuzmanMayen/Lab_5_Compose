@@ -3,7 +3,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.material.TabRow
 import androidx.compose.material.TabRowDefaults
 import androidx.compose.material3.Icon
-
 import androidx.compose.material3.LeadingIconTab
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
@@ -13,7 +12,6 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.pagerTabIndicatorOffset
 import com.google.accompanist.pager.rememberPagerState
-import androidx.compose.material3.TabPosition
 import androidx.compose.material3.Text
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import com.google.accompanist.pager.HorizontalPager
