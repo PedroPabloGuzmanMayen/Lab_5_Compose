@@ -7,3 +7,8 @@ import androidx.compose.runtime.Composable
 fun favorites(){
     Text("Favoritos")
 }
+
+@Composable
+fun favorites_content(){
+
+}

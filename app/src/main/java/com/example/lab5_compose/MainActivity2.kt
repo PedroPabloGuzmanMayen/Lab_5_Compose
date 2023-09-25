@@ -22,7 +22,7 @@ class MainActivity2(details: concertDetails) : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    details(details)
+                    //details(details)
 
                 }
             }

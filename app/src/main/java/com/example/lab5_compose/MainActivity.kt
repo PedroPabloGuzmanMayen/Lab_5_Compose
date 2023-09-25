@@ -31,7 +31,7 @@ class MainActivity : ComponentActivity() {
                     //locations(events)
                     //details(events[0])
                     //AppNavigation(events)
-                    TabsPrincipal()
+                    AppNavigation()
                 }
             }
         }
