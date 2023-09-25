@@ -1,8 +1,5 @@
 package com.example.lab5_compose
 
-
-
-
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxHeight
