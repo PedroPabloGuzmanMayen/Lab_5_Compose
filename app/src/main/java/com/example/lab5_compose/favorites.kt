@@ -51,15 +51,6 @@ fun favorites(){
                     Text("Favoritos") //Appname
                 },
                 colors = TopAppBarDefaults.smallTopAppBarColors(containerColor = Color.Yellow ),
-                navigationIcon = {
-                    IconButton(onClick = {}) {
-                        Icon(
-                            imageVector = Icons.Filled.ArrowBack,
-                            contentDescription = "Localized description"
-                        )
-
-                    }
-                },
                 scrollBehavior = scrollBehavior
             )
         }
