@@ -93,7 +93,7 @@ fun slides(information: concertDetails) {
             Image(
                 painter = rememberImagePainter(data = "https://mir-s3-cdn-cf.behance.net/user/276/10116677.547f0cc7a3aa4.jpg"),
                 contentDescription = null
-            ) 
+            )
         }
     }
 }
