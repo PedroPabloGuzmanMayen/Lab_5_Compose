@@ -22,7 +22,7 @@ class MainActivity4 : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting4("Android")
+                    profile()
                 }
             }
         }

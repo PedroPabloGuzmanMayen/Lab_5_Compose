@@ -24,9 +24,9 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //mainScreen(events)
-                    //locations(events)
-                    details(events[0])
+                    mainScreen(events)
+
+
                 }
             }
         }

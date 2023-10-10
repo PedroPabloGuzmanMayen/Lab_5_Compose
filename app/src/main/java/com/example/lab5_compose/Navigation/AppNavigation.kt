@@ -5,7 +5,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.lab5_compose.concertDetails
-import com.example.lab5_compose.detailsScreen
+import com.example.lab5_compose.details
 import com.example.lab5_compose.mainScreen
 
 @Composable
@@ -16,7 +16,7 @@ fun AppNavigaton(information: MutableList<concertDetails>){
             mainScreen(information)
         }
         composable(route = AppScreens.SecondScreen.route){
-            detailsScreen()
+            //details()
         }
     }
 }

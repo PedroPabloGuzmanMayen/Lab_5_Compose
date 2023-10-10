@@ -22,7 +22,7 @@ class MainActivity3 : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting3("Android")
+                    details(taylorSwift)
                 }
             }
         }
